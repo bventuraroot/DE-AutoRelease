@@ -1,0 +1,1547 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/26/2024 9:21:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="US0BASTRSH15P"
+  DTS:CreatorName="RIA\brianv"
+  DTS:DTSID="{02A40A37-7EB7-4CCE-9C3A-A33628CF7C81}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{11090A03-F389-43E1-ABAE-54878ACEF680}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[datawarehouse.ria.local.fxDBEDW_Apps]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F808559E-10A1-4903-BE68-EB241AEC989C}"
+      DTS:ObjectName="datawarehouse.ria.local.fxDBEDW_Apps">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=datawarehouse.ria.local;Initial Catalog=fxDBEDW_Apps;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{F808559E-10A1-4903-BE68-EB241AEC989C}datawarehouse.ria.local.fxDBEDW_Apps;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel DE Autorelase]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C0A63B73-799D-4C7F-AC87-6B65EF04B397}"
+      DTS:ObjectName="Excel DE Autorelase">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\us0mtsdfs01p\Ria\Compliance_Strategy_APP\Restricted\powerbi\strategics\DE AutoRelease\DE_Autorelease.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderID"
+              DTS:DTSID="{17B7BC42-72D1-455E-AB58-48E5BE0B54B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderNo"
+              DTS:DTSID="{1E560B74-4716-4774-AC48-D73C5D2701E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ML Scoring Date"
+              DTS:DTSID="{AE82CC82-4D7A-4C20-BE26-BED2CB112A17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Production vs Shadow"
+              DTS:DTSID="{942D52E0-AE2C-426D-8DA8-C46E33EFBC11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Safe to Release?"
+              DTS:DTSID="{3F1DCB4B-D738-496F-99D3-787CD1EE5FEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shadow Change"
+              DTS:DTSID="{17BC781F-0C99-4224-A683-09EA04C57158}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sending Channel"
+              DTS:DTSID="{A152F4C3-FCEA-4600-835B-76E617276F99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Note"
+              DTS:DTSID="{D96F719B-E627-44B0-8474-7B41D509C244}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{99EBBCBC-ED78-471B-ACC8-3F3D72341144}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Ruta]+"\\" +@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\us0mtsdfs01p\Ria\Compliance_Strategy_APP\Restricted\powerbi\strategics\DE AutoRelease\DataAI\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="orderid"
+              DTS:DTSID="{CE7FECEA-18DD-438F-82B4-E93A81E2A7AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="filternumber"
+              DTS:DTSID="{98D8B1FF-9F28-4A5F-8FA4-03FBF4958E68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="flogdate"
+              DTS:DTSID="{81F46B5C-AC3C-4E71-B1DB-3FA0FF445193}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="paid"
+              DTS:DTSID="{AE2489E1-DAAF-43CB-9E28-FECE4E65F109}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="canceled"
+              DTS:DTSID="{E9DDE62D-F457-4364-9364-0DD4C3D2C29E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2967765D-A2A7-49AF-9CF3-D777E1FFD487}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2CB0556B-0659-4C1A-BE35-3B7FB023BA31}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Ruta">
+      <DTS:VariableValue
+        DTS:DataType="8">\\us0mtsdfs01p\Ria\Compliance_Strategy_APP\Restricted\powerbi\strategics\DE AutoRelease\DataAI</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DELETE datasp Jul and data eu PM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{32A2E623-C78C-4FF2-A403-1FB5B413161E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DELETE datasp Jul and data eu PM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F808559E-10A1-4903-BE68-EB241AEC989C}"
+          SQLTask:SqlStatementSource="USE [fxDBEDW_Apps];&#xA;delete from dbo.dataSP where [payout commit date] &gt;= '20240601';&#xA;&#xA;truncate table dbo.sp;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{B2306DAB-C9D6-42D8-A9F6-7B8D55DF9DD9}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{0DB8C49C-3996-4038-B5ED-0974259311F8}"
+        DTS:ObjectName="{0DB8C49C-3996-4038-B5ED-0974259311F8}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::Ruta]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\us0mtsdfs01p\Ria\Compliance_Strategy_APP\Restricted\powerbi\strategics\DE AutoRelease\DataAI" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Insert data fx filter"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{0B3C9220-45B9-4B09-96CC-0A1460551C48}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert data fx filter"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[orderid]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[orderid]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[orderid]"
+                          name="orderid"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[filternumber]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[filternumber]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[filternumber]"
+                          name="filternumber"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[flogdate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[flogdate]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[flogdate]"
+                          name="flogdate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[paid]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[paid]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[paid]"
+                          name="paid"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[canceled]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[canceled]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[canceled]"
+                          name="canceled"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[orderid]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="orderid" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[filternumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="filternumber" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[flogdate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="flogdate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[paid]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="paid" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[canceled]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="canceled" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DE_AutoRelease_FxFilters]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[datawarehouse.ria.local.fxDBEDW_Apps]"
+                      connectionManagerRefId="Package.ConnectionManagers[datawarehouse.ria.local.fxDBEDW_Apps]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[orderid]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="orderid"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[orderid]"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[orderid]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[filternumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="filternumber"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[filternumber]"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[filternumber]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[flogdate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="flogdate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[flogdate]"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[flogdate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[paid]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="paid"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[paid]"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[paid]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[canceled]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="canceled"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[canceled]"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output].Columns[canceled]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[orderid]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="orderid" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[filternumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="filternumber" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[flogdate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="flogdate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[paid]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="paid" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[canceled]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="canceled" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Insert data fx filter.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Insert data fx filter\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{A6BB4E36-DC02-49D8-9C0E-DDF585D3B70B}"
+          DTS:ObjectName="{A6BB4E36-DC02-49D8-9C0E-DDF585D3B70B}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert Data DE AUTO RELEASE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BA99D378-F8E9-4C33-8D08-8E89F340EEDC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Data DE AUTO RELEASE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ADD DATA DE AUTORELEASE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DE_Autorelease$]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[datawarehouse.ria.local.fxDBEDW_Apps]"
+                  connectionManagerRefId="Package.ConnectionManagers[datawarehouse.ria.local.fxDBEDW_Apps]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[OrderID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[OrderNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrderNo"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[OrderNo]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[OrderNo]" />
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[ML Scoring Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ML Scoring Date"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[ML Scoring Date]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[ML Scoring Date]" />
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[Production vs Shadow]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Production vs Shadow"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Production vs Shadow]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Production vs Shadow]" />
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[Safe to Release?]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Safe to Release?"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Safe to Release?]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Safe to Release?]" />
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[Shadow Change]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Shadow Change"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Shadow Change]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Shadow Change]" />
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[Sending Channel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sending Channel"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Sending Channel]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Sending Channel]" />
+                    <inputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].Columns[Note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Note"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Note]"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Note]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      dataType="r8"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[OrderNo]"
+                      codePage="1252"
+                      dataType="text"
+                      name="OrderNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[ML Scoring Date]"
+                      dataType="dbTimeStamp"
+                      name="ML Scoring Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Production vs Shadow]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Production vs Shadow" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Safe to Release?]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Safe to Release?" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Shadow Change]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Shadow Change" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Sending Channel]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Sending Channel" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input].ExternalColumns[Note]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Note" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Data DE AUTO RELEASE\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel DE Autorelase]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel DE Autorelase]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[OrderID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderID]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[OrderNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderNo]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[OrderNo]"
+                      name="OrderNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[ML Scoring Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ML Scoring Date]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[ML Scoring Date]"
+                      name="ML Scoring Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Production vs Shadow]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Production vs Shadow]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Production vs Shadow]"
+                      name="Production vs Shadow"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Safe to Release?]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Safe to Release?]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Safe to Release?]"
+                      name="Safe to Release?"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Shadow Change]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shadow Change]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Shadow Change]"
+                      name="Shadow Change"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Sending Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sending Channel]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Sending Channel]"
+                      name="Sending Channel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Note]"
+                      length="50"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].Columns[Note]"
+                      name="Note"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OrderNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrderNo" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ML Scoring Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ML Scoring Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Production vs Shadow]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Production vs Shadow" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Safe to Release?]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Safe to Release?" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shadow Change]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Shadow Change" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sending Channel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sending Channel" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Note" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert Data DE AUTO RELEASE.Paths[Flat File Source Output]"
+              endId="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert Data DE AUTO RELEASE\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABLE DE AUTORELEASE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BA9BDCC9-8FB3-44CC-8583-6DA93FC6931E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABLE DE AUTORELEASE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F808559E-10A1-4903-BE68-EB241AEC989C}"
+          SQLTask:SqlStatementSource="USE [fxDBEDW_Apps];&#xA;&#xA;truncate table dbo.DE_AutoRelease$;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABLE Fx Filter"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F1D02E43-8203-462C-986E-D88C499D5DD8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABLE Fx Filter"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F808559E-10A1-4903-BE68-EB241AEC989C}"
+          SQLTask:SqlStatementSource="USE [fxDBEDW_Apps];&#xA;&#xA;truncate table dbo.DE_AutoRelease_FxFilters;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\UPDATE Order ID DE Autorelease"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{3638E066-D5AB-4A89-B540-AB7791336C2B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="UPDATE Order ID DE Autorelease"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F808559E-10A1-4903-BE68-EB241AEC989C}"
+          SQLTask:SqlStatementSource="USE [fxDBEDW_Apps];&#xA;UPDATE sp&#xA;SET sp.[Order ID] = o.OrderID&#xA;from dbo.sp sp&#xA;JOIN fxDBEDW_Global.MONeyTrans.fact_MONeyTransfer o on sp.OrderNumber = o.OrderNo&#xA;WHERE Channel = 'Intl to Intl';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D5CD6988-1346-4A35-942C-F080462FC447}"
+      DTS:From="Package\TRUNCATE TABLE Fx Filter"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{32DEA385-8186-4CC0-A486-D7040D03E966}"
+      DTS:From="Package\TRUNCATE TABLE DE AUTORELEASE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Insert Data DE AUTO RELEASE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{C8C22695-308C-40E5-9E78-8432A3B94B08}"
+      DTS:From="Package\Foreach Loop Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\TRUNCATE TABLE DE AUTORELEASE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="244,42"
+          Id="Package\DELETE datasp Jul and data eu PM"
+          TopLeft="737,516" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Foreach Loop Container\Insert data fx filter"
+          TopLeft="185,98" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="583,289"
+          Size="583,332"
+          Id="Package\Foreach Loop Container"
+          TopLeft="47,202" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Insert Data DE AUTO RELEASE"
+          TopLeft="751,199" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\TRUNCATE TABLE DE AUTORELEASE"
+          TopLeft="717,56" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\TRUNCATE TABLE Fx Filter"
+          TopLeft="236,47" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\UPDATE Order ID DE Autorelease"
+          TopLeft="742,442" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="338.5,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-95.8333333333333,113"
+              Start="0,0"
+              End="-95.8333333333333,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.6144372220322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.6144372220322"
+                    Point2="0,67.6144372220322"
+                    Point3="-4,67.6144372220322" />
+                  <mssgle:LineSegment
+                    End="-91.8333333333333,67.6144372220322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-91.8333333333333,67.6144372220322"
+                    Point2="-95.8333333333333,67.6144372220322"
+                    Point3="-95.8333333333333,71.6144372220322" />
+                  <mssgle:LineSegment
+                    End="-95.8333333333333,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="844,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.5,101"
+              Start="0,0"
+              End="19.5,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.5"
+                    Point2="0,50.5"
+                    Point3="4,50.5" />
+                  <mssgle:LineSegment
+                    End="15.5,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,50.5"
+                    Point2="19.5,50.5"
+                    Point3="19.5,54.5" />
+                  <mssgle:LineSegment
+                    End="19.5,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="434.333333333333,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="368.666666666667,-104"
+              Start="0,0"
+              End="368.666666666667,-96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-47.7715216752584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-47.7715216752584"
+                    Point2="0,-51.7715216752584"
+                    Point3="4,-51.7715216752584" />
+                  <mssgle:LineSegment
+                    End="364.666666666667,-51.7715216752584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="364.666666666667,-51.7715216752584"
+                    Point2="368.666666666667,-51.7715216752584"
+                    Point3="368.666666666667,-55.7715216752584" />
+                  <mssgle:LineSegment
+                    End="368.666666666667,-96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Insert data fx filter">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination"
+          TopLeft="273,290" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container\Insert data fx filter\Flat File Source"
+          TopLeft="566,157" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Insert data fx filter.Paths[Flat File Source Output]"
+          TopLeft="641.5,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-283,91"
+              Start="0,0"
+              End="-283,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.5"
+                    Point2="0,45.5"
+                    Point3="-4,45.5" />
+                  <mssgle:LineSegment
+                    End="-279,45.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-279,45.5"
+                    Point2="-283,45.5"
+                    Point3="-283,49.5" />
+                  <mssgle:LineSegment
+                    End="-283,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Insert data fx filter\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Insert Data DE AUTO RELEASE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE"
+          TopLeft="549,280" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Insert Data DE AUTO RELEASE\Flat File Source"
+          TopLeft="626,145" />
+        <EdgeLayout
+          Id="Package\Insert Data DE AUTO RELEASE.Paths[Flat File Source Output]"
+          TopLeft="701.5,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43,93"
+              Start="0,0"
+              End="-43,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5"
+                    Point2="0,46.5"
+                    Point3="-4,46.5" />
+                  <mssgle:LineSegment
+                    End="-39,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39,46.5"
+                    Point2="-43,46.5"
+                    Point3="-43,50.5" />
+                  <mssgle:LineSegment
+                    End="-43,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Data DE AUTO RELEASE\ADD DATA DE AUTORELEASE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
